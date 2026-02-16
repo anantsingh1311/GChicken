@@ -1,0 +1,3 @@
+This Project is a real world project, made for company GChicken pvt ltd. 
+
+This is a readme file which basically dictates upon how the landing page works, its features and developer notes.
