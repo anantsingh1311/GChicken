@@ -2,11 +2,17 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-//for password setup
-const bcrypt = require("bcryptjs");
 
-//Data base for user data:
+
+//Data base for items data:
 const userSchema = new Schema({
+    //  username:{
+    //     type: String,
+    //     required: true,
+    //     unique: true,
+    //     trim: true,
+    //     minlength:5
+    // },
     itemName:{
         type: String,
         required: true,

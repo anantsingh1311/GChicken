@@ -25,16 +25,12 @@ mongoose.connect(uri);
 const connection = mongoose.connection;
 connection.once('open', () => { console.log("MongoDB database connection established sucessfully") });
 
-//use the routes created here in server file of backend
-// const excerciseRouter = require('./routes/excercise');
-// const userRouter = require('./routes/user');
-// const authuserRoutes = require('./routes/auth')
+//using our created routes:
+const userRouter = require('./routes/user-route');
+const itemsRouter = require('./routes/items-route');
 
-// app.use('/exercise', excerciseRouter);
-// app.use('/user', userRouter);
-
-// app.use(express.json());
-// app.use('/api',authuserRoutes);
+app.use('/user',userRouter);
+app.use('/items',itemsRouter);
 
 //this app starts the server on listening on the port specified above
 app.listen(port, () => {

@@ -42,6 +42,13 @@ const userSchema = new Schema({
         trim: true,
         minlength: 2
     },
+    mobile:{
+        type: Number,
+        required: true,
+        unique: true,
+        trim: true,
+        minlength:10
+    },
     password:{
         type: String,
         required: true,
