@@ -6,13 +6,6 @@ const Schema = mongoose.Schema;
 
 //Data base for items data:
 const userSchema = new Schema({
-    //  username:{
-    //     type: String,
-    //     required: true,
-    //     unique: true,
-    //     trim: true,
-    //     minlength:5
-    // },
     itemName:{
         type: String,
         required: true,

@@ -14,9 +14,13 @@ router.route('/add').post((req, res) => {
     const itemName = req.body.itemName;
     const description = req.body.description;
     const price = req.body.price;
-
-    newuser.save()
-    .then(()=>res.json("User Added!"))
+    const newitems = new Items({
+        itemName,
+        description,
+        price,
+    })
+    newitems.save()
+    .then(()=>res.json("Items Added!"))
     .catch(err => res.status(400).json("Error "+ err));
 })
 
