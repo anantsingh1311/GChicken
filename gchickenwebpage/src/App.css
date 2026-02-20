@@ -1,54 +1,70 @@
-
-
+/* Root container */
 .app-root {
   min-height: 100vh;
-  background-color: #0b3d2e; /* deep Mughlai green */
-  border: 6px solid #c9a24d; /* antique gold */
+  background-color: #0f4f3a; /* deep Mughlai green */
+  border: 2px solid #c9a24d; /* antique gold */
   display: flex;
-  align-items: left;
-  justify-content: left;
-  padding: auto;
+  flex-direction: column;     /* stack elements vertically */
+  align-items: flex-start;    /* left align content */
+  justify-content: flex-start;/* top alignment */
+  padding: 20px;              /* some spacing around content */
 }
 
-.royal-frame {
-  max-width: 900px;
-  padding: auto;
-  text-align: top-left;
-  background-color: rgba(11, 61, 46, 0.95);
-  border: 2px solid #c9a24d;
-}
-
+/* Main title */
 .royal-title {
- font-family: "Great Vibes", cursive;
-  color: #e6d8a3;
-  font-weight: 400; /* keep light to elegant */
-  letter-spacing: 2px;
-  font-size: 90px;
+  font-family: "Great Vibes", cursive;
+  color: #e6d8a3;             /* light gold */
+  font-weight: 400;
+  font-size: clamp(2.5rem, 6vw, 4rem); /* responsive font size */
+  /* margin-bottom: 20px; */
+}
+.royal-title:hover{
+    color: #ffa600;
+  /* background-color: rgba(255, 166, 0, 0.15);  */
+  /* border-radius: 100px; */
 }
 
-
-.royal-subtitle {
-  margin-top: 1rem;
-  color: #f4f1e8; /* ivory */
-  font-size: 1.1rem;
+/* Navigation bar */
+.royal-nav-bar {
+  background-color: #0f4f3a;
+  border: 2px solid gold;
+  padding: 10px 20px;         /* proper spacing */
+  display: flex;
+  gap: 10px;                  /* space between nav links */
+  width: 100%;
+  justify-content: space-evenly;
+}
+.royal-nav-bar2 {
+  background-color: #0f4f3a;
+  padding: 10px 20px;         /* proper spacing */
+  display: flex;
+  gap: 10px;                  /* space between nav links */
+  width: 100%;
+  justify-content: space-evenly;
 }
 
-.royal-header {
-  padding: 2.5rem 1rem 1.5rem;
-  background-color: #0b3d2e;
-  border-bottom: 2px solid #c9a24d;
-}
-
+/* Nav links */
 .royal-nav-link {
   color: #727115;
-  padding: 0.5rem 1.5rem;
-  font-family:"Great Vibes", cursive;
-  word-spacing: 0.5;
-  font-size: 30px;
+  font-family: "Great Vibes", cursive;
   font-style: italic;
-  font-weight: 200;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem); /* responsive text */
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  display: block;       /* better for full-width clickable area */
+ 
 }
 
 .royal-nav-link:hover {
   color: #ffa600;
+  background-color: rgba(255, 166, 0, 0.15); 
+  border-radius: 100px;
+}
+
+/* Logo */
+.navbar-logo {
+  max-height: 48px;  /* keeps logo size consistent */
+  width: auto;
+  border-radius: 100%;
 }
