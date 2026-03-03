@@ -1,0 +1,17 @@
+#titleProducts{
+    text-align: center;
+}
+.tablecontent{
+    align-items: center;
+    border: 2px solid goldenrod;
+}
+.tablecontent th,
+.tablecontent td {
+    border: 2px solid goldenrod;
+    padding: 10px;
+}
+.tables-container {
+  display: flex;
+  gap: 20px; /* space between the tables */
+  align-items: flex-start; /* aligns top edges */
+}

@@ -3,10 +3,6 @@
   min-height: 100vh;
   background-color: #0f4f3a; /* deep Mughlai green */
   border: 2px solid #c9a24d; /* antique gold */
-  display: flex;
-  flex-direction: column;     /* stack elements vertically */
-  align-items: flex-start;    /* left align content */
-  justify-content: flex-start;/* top alignment */
   padding: 20px;              /* some spacing around content */
 }
 
@@ -67,4 +63,16 @@
   max-height: 48px;  /* keeps logo size consistent */
   width: auto;
   border-radius: 100%;
+}
+
+/* Text */
+.textTypeCursive{
+    color: #727115;
+  font-family: "Great Vibes", cursive;
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem); /* responsive text */
+  text-decoration: none;
+}
+#titleProducts{
+    text-align: center;
 }

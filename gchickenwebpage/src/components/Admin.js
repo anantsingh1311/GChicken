@@ -1,15 +1,13 @@
 import React, {Component} from "react";
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import "../App.css"
-import "@fontsource/great-vibes"; 
 import "bootstrap/dist/css/bootstrap.min.css";
-import brandLogo from "../brand-logo.JPG";
 
 export default class Admin extends Component{
 
     render(){
         return(
-        <div className="form app-root">Admin Info</div>)
+        <div className="app-root">Admin Info</div>)
     ;
     }
 }

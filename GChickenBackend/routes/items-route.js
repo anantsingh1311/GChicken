@@ -3,11 +3,13 @@ const router = require('express').Router();
 let Items = require('../models/items-model');
 
 //API call to get current data from the database:
-router.route('/').get((req,res) =>{
-    Items.find()
-    .then(items => res.json(items))
-    .catch(err=> res.status(400).json("Error: "+err));
-
+router.route('/').get(async (req, res) => {
+  try {
+    const items = await Items.find({});
+    res.json(items);
+  } catch (err) {
+    res.status(400).json("Error: " + err);
+  }
 });
 
 router.route('/add').post((req, res) => {

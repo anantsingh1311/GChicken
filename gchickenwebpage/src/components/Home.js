@@ -7,7 +7,7 @@ export default class Home extends Component{
 
     render(){
         return(
-       <div className = "form app-root">
+       <div className = "app-root">
         Home Page
 
        </div>

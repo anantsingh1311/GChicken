@@ -9,23 +9,17 @@ const userSchema = new Schema({
     itemName:{
         type: String,
         required: true,
-        unique: true,
-        trim: true,
-        minlength:3
+        trim: true
     },
     description:{
          type: String,
         required: true,
-        unique: true,
         trim: true,
-        minlength: 10
     },
     price:{
-        type: Number,
+        type: String,
         required: true,
-        trim: true,
-        minlength: 6,
-        select: false
+        trim: true
     }
 }, {
     timestamps:true
