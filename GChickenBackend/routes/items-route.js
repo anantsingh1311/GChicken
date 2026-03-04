@@ -16,10 +16,12 @@ router.route('/add').post((req, res) => {
     const itemName = req.body.itemName;
     const description = req.body.description;
     const price = req.body.price;
+    const image = req.body.image;
     const newitems = new Items({
         itemName,
         description,
         price,
+        image
     })
     newitems.save()
     .then(()=>res.json("Items Added!"))
