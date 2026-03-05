@@ -13,11 +13,12 @@
 
 .tables-container {
   display: flex;
-  justify-content: center;
   gap: 40px; /* space between tables */
   align-items: flex-start;
-  flex-wrap: wrap; /* makes it responsive */
-  margin-top: 20px;
+}
+
+.tables-container > div {
+  flex: 1; /* makes both tables take equal width */
 }
 
 

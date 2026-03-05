@@ -10,7 +10,7 @@ export default class Navbar extends Component{
     render(){
         return(
         <nav className="navbar royal-nav-bar navbar-expand-lg fs-4 fs-md-1">
-        <Link to="/" className="navbar-brand royal-title">GChickenn <img
+        <Link to="/" className="navbar-brand royal-title">GChickenn<img
   src={brandLogo}
   alt="GChickenn logo"
   className="navbar-logo"
