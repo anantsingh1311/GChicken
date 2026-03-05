@@ -43,7 +43,7 @@ const userSchema = new Schema({
         minlength: 2
     },
     mobile:{
-        type: Number,
+        type: String,
         required: true,
         unique: true,
         trim: true,

@@ -1,0 +1,52 @@
+
+.content{
+    font-family: 'Times New Roman', Times, serif;
+    color:goldenrod;
+    font-weight: 300;
+    text-align: center;
+    flex: auto;
+}
+
+.content h1 , h2 {
+       font-family: 'Times New Roman', Times, serif;
+    color:goldenrod;
+    font-weight: 300;
+    text-align: center;
+    
+}
+.content h2{
+    display: inline-block;
+}
+.content h2:hover{
+    color: red;
+    background-color: goldenrod;
+    border: 2px solid goldenrod;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.content h2{
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+
+/* Table CSS */
+.table{
+      border: 2px solid goldenrod;
+  border-collapse: collapse;
+  background-color: white;
+  margin: 0 auto;
+  min-width: 400px;
+}
+
+.table th,
+td{
+    border: 2px solid goldenrod;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.table th {
+  background-color: #faf3e0;
+  font-weight: bold;
+}

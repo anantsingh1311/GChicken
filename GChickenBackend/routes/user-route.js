@@ -16,7 +16,7 @@ router.route('/add').post((req, res) => {
     const lastname = req.body.lastname;
     const firmName = req.body.firmName;
     const email = req.body.email;
-    const mobile = Number(req.body.mobile);
+    const mobile = req.body.mobile;
     const password = req.body.password;
 
        const newuser = new User({ 
@@ -30,8 +30,14 @@ router.route('/add').post((req, res) => {
         });
 
     newuser.save()
-    .then(()=>res.json("User Added!"))
+    .then(()=>res.json("User Added! "))
     .catch(err => res.status(400).json("Error "+ err));
 })
 
+//To allow admin to delete user info
+router.route('/:id').delete((req, res) => {
+    User.findByIdAndDelete(req.params.id)
+    .then(() => res.json('Excercise data deleted!'))
+    .catch(err=> res.status(400).json('Error: '+err))
+});
 module.exports = router;
