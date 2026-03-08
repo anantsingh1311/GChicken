@@ -37,42 +37,42 @@ export default class Signup extends Component{
     <form className="form" onSubmit={this.OnSubmit}>
 
 <div className="form-group">
-<label>Create a username</label>
+<label>Create a username:</label>
 <input type="text" required />
 </div>
 
 <div className="form-group">
-<label>Enter your First Name</label>
+<label>Enter your First Name:</label>
 <input type="text" required />
 </div>
 
 <div className="form-group">
-<label>Enter your Last Name</label>
+<label>Enter your Last Name:</label>
 <input type="text" required />
 </div>
 
 <div className="form-group">
-<label>Enter your Firm Name</label>
+<label>Enter your Firm Name:</label>
 <input type="text" required />
 </div>
 
 <div className="form-group">
-<label>Enter your Mobile Phone</label>
+<label>Enter your Mobile Phone:</label>
 <input type="tel" required />
 </div>
 
 <div className="form-group">
-<label>Enter your Email Address</label>
+<label>Enter your Email Address:</label>
 <input type="email" required />
 </div>
 
 <div className="form-group">
-<label>Enter a Password</label>
+<label>Enter a Password:</label>
 <input type="password" required />
 </div>
 <br/>
 <div className="form-group">
-<label>Re-Enter your Password</label>
+<label>Re-Enter your Password:</label>
 <input type="password" required />
 </div>
 

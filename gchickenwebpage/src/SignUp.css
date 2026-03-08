@@ -1,8 +1,10 @@
+/* Page Titles */
 #title{
     font-family: 'Times New Roman', Times, serif;
     color: goldenrod;
     font-weight: 500;
     text-align: center;
+    margin-top: 20px;
 }
 
 #Stitle{
@@ -11,6 +13,7 @@
     font-weight: 500;
     text-align: center;
 }
+
 #text{
     font-family: 'Times New Roman', Times, serif;
     color: goldenrod;
@@ -18,50 +21,69 @@
     text-align: center;
     display: block;
     border-bottom:2px solid goldenrod;
-}
-.form{
-     font-family: 'Times New Roman', Times, serif;
-    color: goldenrod;
-    font-weight: 500;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
 }
 
+/* Form container */
+.form{
+    font-family: 'Times New Roman', Times, serif;
+    color: goldenrod;
+    font-weight: 500;
+
+    max-width: 500px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Each form section */
 .form-group{
     display: flex;
     flex-direction: column;
-    width: 250px;
+    gap: 8px;
 }
 
+/* Labels */
 .form-group label{
-    margin-bottom: 6px;
     font-family: 'Times New Roman', Times, serif;
     color: goldenrod;
+    font-size: large;
+    font-weight: 400;
+    gap: 2px;
+    text-spacing-trim: normal;
 }
 
+/* Inputs */
 .form-group input{
     padding: 10px;
     border-radius: 6px;
     border: 1px solid #ccc;
+    width: 100%;
 }
 
+/* Submit section */
 .submit-group{
-    width: 100%;
     text-align: center;
     margin-top: 20px;
 }
+
+/* Submit button */
 .submit-button{
     font-family: 'Times New Roman', Times, serif;
     color: goldenrod;
     background-color: #0f4f3a;
     border: 2px solid gold;
-    width: auto;
-    border-radius: 100%;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
 }
+
+/* Hover effect */
 .submit-button:hover{
     color: #ffa600;
     background-color: rgba(255, 166, 0, 0.414);
-    transition: all 0.3s ease-in;
-    
+    transition: 0.3s;
 }
