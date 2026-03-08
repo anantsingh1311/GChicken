@@ -28,8 +28,8 @@ const userSchema = new Schema({
         trim: true,
         minlength: 2
     },
-    firmName:{
-           type: String,
+    firmname:{
+        type: String,
         required: false,
         unique: false,
         trim: true,

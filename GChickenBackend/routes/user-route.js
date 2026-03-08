@@ -3,18 +3,20 @@ const router = require('express').Router();
 let User = require('../models/user-model');
 
 //API call to get current data from the database:
-router.route('/').get((req,res) =>{
-    User.find()
-    .then(user => res.json(user))
-    .catch(err=> res.status(400).json("Error: "+err));
-
+router.route('/').get(async (req, res) => {
+  try {
+    const user = await User.find({});
+    res.json(user);
+  } catch (err) {
+    res.status(400).json("Error: " + err);
+  }
 });
 
 router.route('/add').post((req, res) => {
  const username = req.body.username;
     const firstname = req.body.firstname;
     const lastname = req.body.lastname;
-    const firmName = req.body.firmName;
+    const firmname = req.body.firmname;
     const email = req.body.email;
     const mobile = req.body.mobile;
     const password = req.body.password;
@@ -23,7 +25,7 @@ router.route('/add').post((req, res) => {
             username,
             firstname,
             lastname,
-            firmName,
+            firmname,
             email,
             mobile, 
             password
