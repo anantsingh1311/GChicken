@@ -47,7 +47,7 @@ onButtonPressed = (id) => {
         return(
             
         <div className="app-root">
-            
+            <div className="table-wrapper">
             <div className="content">
             <h1>Admin Page</h1>
             <h2><u>Captured User info: </u></h2>
@@ -87,7 +87,7 @@ onButtonPressed = (id) => {
                
 
             </table>
-            
+            </div>
         </div>)
     ;
     }

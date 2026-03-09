@@ -1,52 +1,91 @@
-
-.content{
+/* General Content Styling */
+.content {
     font-family: 'Times New Roman', Times, serif;
-    color:goldenrod;
+    color: goldenrod;
     font-weight: 300;
     text-align: center;
     flex: auto;
+    padding: 1rem;
 }
 
-.content h1 , h2 {
-       font-family: 'Times New Roman', Times, serif;
-    color:goldenrod;
+/* Headings */
+.content h1,
+.content h2 {
+    font-family: 'Times New Roman', Times, serif;
+    color: goldenrod;
     font-weight: 300;
     text-align: center;
-    
+    margin: 0.5rem 0;
 }
-.content h2{
+
+.content h2 {
     display: inline-block;
+    transition: all 0.3s ease;
 }
-.content h2:hover{
+
+.content h2:hover {
     color: red;
     background-color: goldenrod;
     border: 2px solid goldenrod;
     border-radius: 8px;
     cursor: pointer;
 }
-.content h2{
-    display: inline-block;
-    transition: all 0.3s ease;
+
+/* Table Styling */
+/* CSS for responsive scrolling */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* allows horizontal scrolling */
 }
 
-
-/* Table CSS */
-.table{
-      border: 2px solid goldenrod;
-  border-collapse: collapse;
-  background-color: white;
-  margin: 0 auto;
-  min-width: 400px;
+/* Table styling remains mostly the same */
+.table {
+    width: 100%;
+    min-width: 600px; /* optional: ensures table doesn’t collapse too much */
+    border: 2px solid goldenrod;
+    border-collapse: collapse;
+    background-color: white;
 }
 
 .table th,
-td{
+.table td {
     border: 2px solid goldenrod;
-  padding: 10px 15px;
-  text-align: center;
+    padding: 10px 15px;
+    text-align: center;
+    word-wrap: break-word;
 }
 
 .table th {
-  background-color: #faf3e0;
-  font-weight: bold;
+    background-color: #faf3e0;
+    font-weight: bold;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .table th,
+    .table td {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .content h1 {
+        font-size: 1.5rem;
+    }
+
+    .content h2 {
+        font-size: 1.2rem;
+        padding: 5px 10px;
+    }
+
+    .table {
+        width: 100%;
+        font-size: 0.85rem;
+    }
+
+    .table th,
+    .table td {
+        padding: 6px 8px;
+    }
 }

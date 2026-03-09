@@ -1,37 +1,35 @@
 /* =========================
    TITLE
 ========================= */
-
 #titleProducts {
   text-align: center;
 }
 
-
 /* =========================
    TABLE CONTAINER
 ========================= */
-
 .tables-container {
   display: flex;
   gap: 40px; /* space between tables */
   align-items: flex-start;
+  flex-wrap: wrap; /* allow wrapping on small screens */
 }
 
 .tables-container > div {
   flex: 1; /* makes both tables take equal width */
+  min-width: 0; /* prevent overflow */
 }
-
 
 /* =========================
    TABLE STYLING
 ========================= */
-
 .tablecontent {
   border: 2px solid goldenrod;
   border-collapse: collapse;
   background-color: white;
   margin: 0 auto;
-  min-width: 400px;
+  width: 100%; /* responsive width */
+  box-sizing: border-box; /* include border/padding */
 }
 
 .tablecontent th,
@@ -46,14 +44,14 @@
   font-weight: bold;
 }
 
-
 /* =========================
    PRODUCT IMAGE (TABLE)
 ========================= */
-
 .productImages {
   max-height: 150px;
   max-width: 150px;
+  width: 100%; /* scale down on mobile */
+  height: auto;
   border: 2px solid goldenrod;
   border-radius: 20%;
   cursor: pointer;
@@ -64,11 +62,9 @@
   transform: scale(1.05);
 }
 
-
 /* =========================
    LIGHTBOX
 ========================= */
-
 .lightbox-overlay {
   position: fixed;
   top: 0;
@@ -96,11 +92,9 @@
   border: 3px solid goldenrod;
 }
 
-
 /* =========================
    LIGHTBOX BUTTONS
 ========================= */
-
 .lightbox-close,
 .lightbox-prev,
 .lightbox-next {
@@ -124,4 +118,64 @@
   top: -50px;
   right: 0;
   font-size: 3rem;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+body, html {
+  overflow-x: hidden; /* remove horizontal scroll */
+  margin: 0;
+  padding: 0;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .tables-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .tablecontent {
+    width: 100%;
+  }
+
+  .productImages {
+    max-width: 120px;
+    max-height: 120px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #titleProducts {
+    font-size: 1.6rem;
+    padding: 0 10px;
+  }
+
+  .tablecontent th,
+  .tablecontent td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .productImages {
+    max-width: 90px;
+    max-height: 90px;
+  }
+
+  .lightbox-image {
+    max-width: 95vw;
+    max-height: 75vh;
+  }
+
+  .lightbox-prev,
+  .lightbox-next {
+    font-size: 1.5rem;
+  }
+
+  .lightbox-close {
+    top: -40px;
+    font-size: 2.5rem;
+  }
 }
