@@ -8,6 +8,18 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Order from "./components/Order";
 import Admin from "./components/Admin";
+import { Navigate } from "react-router-dom";
+
+
+//Protecting admin route:
+function AdminRoute({children}){
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  if(!user || user.username !== "admin"){
+    return <Navigate to="/Login"/>;
+  }
+  return children;
+}
 
 function App() {
   return (
@@ -21,7 +33,11 @@ function App() {
             <Route path="/Login" element={<Login/>}/>
             <Route path="/Signup" element={<Signup/>}/>
             <Route path="/Order" element={<Order/>} />
-            <Route path="/Admin" element={<Admin/>}/>
+            <Route path="/Admin" element={
+              <AdminRoute>
+                <Admin/>
+              </AdminRoute>
+          }/>
           </Routes>
 
         </Router>

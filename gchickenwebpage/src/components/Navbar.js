@@ -6,8 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import brandLogo from "../brand-logo.JPG";
 
 export default class Navbar extends Component{
-
     render(){
+      const user = JSON.parse(localStorage.getItem("user"));
         return(
         <nav className="navbar royal-nav-bar navbar-expand-lg fs-4 fs-md-1">
         <Link to="/" className="navbar-brand royal-title">GChickenn<img
@@ -32,9 +32,11 @@ export default class Navbar extends Component{
            <li className="navbar-item">
           <Link to="/Order" className="nav-link royal-nav-link"><b>Order Now</b></Link>
           </li>
-           <li className="navbar-item">
-          <Link to="/Admin" className="nav-link royal-nav-link"><b>Admin-Page</b></Link>
-          </li>
+            {user && user.username === "admin" && (
+         <li className="navbar-item">
+          <Link to="/Admin" className="nav-link royal-nav-link"><b>Admin</b></Link>
+            </li>
+         )}
         </ul>
         </div>
       </nav>)
