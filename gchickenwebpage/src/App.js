@@ -10,15 +10,19 @@ import Order from "./components/Order";
 import Admin from "./components/Admin";
 import { Navigate } from "react-router-dom";
 
-
-//Protecting admin route:
-function AdminRoute({children}){
+function AdminRoute({ children }) {
   const user = JSON.parse(localStorage.getItem("user"));
 
-  if(!user || user.username !== "admin"){
-    return <Navigate to="/Login"/>;
+  // Check user exists and has correct role
+  if (!user) {
+    return <Navigate to="/Login" replace />;
   }
-  return children;
+
+  if (user.role?.toLowerCase() !== "admin") {
+    return <Navigate to="/Login" replace />;
+  }
+
+  return <>{children}</>;
 }
 
 function App() {

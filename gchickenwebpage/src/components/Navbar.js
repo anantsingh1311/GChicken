@@ -32,7 +32,7 @@ export default class Navbar extends Component{
            <li className="navbar-item">
           <Link to="/Order" className="nav-link royal-nav-link"><b>Order Now</b></Link>
           </li>
-            {user && user.username === "admin" && (
+            {user.role === "admin" && (
          <li className="navbar-item">
           <Link to="/Admin" className="nav-link royal-nav-link"><b>Admin</b></Link>
             </li>
@@ -44,33 +44,3 @@ export default class Navbar extends Component{
     }
 }
 
-
-  {/* <nav className="navbar navbar-expand-lg royal-navbar">
-    <button
-      className="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#royalNav"
-      aria-controls="royalNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span className="navbar-toggler-icon"></span>
-    </button>
-
-    <div className="collapse navbar-collapse justify-content-center" id="royalNav">
-      <ul className="navbar-nav flex-column flex-md-row">
-        <li className="nav-item">
-          <Link to="/" className="nav-link royal-nav-link">
-            Home
-          </Link>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</header> */}
-
-  // <header className="royal-header text-center">
-  // <Link to="/" className="navbar-brand d-block mb-2">
-  //   <h1 className="royal-title mb-0">GChickenn</h1>
-  // </Link>

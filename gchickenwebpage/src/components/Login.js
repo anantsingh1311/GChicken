@@ -36,28 +36,22 @@ export default class Login extends Component{
             password: this.state.password
         };
 
-        axios.post("http://localhost:5000/api/login",logInUser)
-          .then(res => {
-            console.log(res.data);
+       axios.post("http://localhost:5000/api/login", logInUser)
+  .then(res => {
+    alert("Login successful");
+    localStorage.setItem("user", JSON.stringify(res.data));
 
-            // success
-            alert("Login successful");
-
-            this.setState({
-                username: "",
-                password: ""
-            });
-
-            //store your logged-in user after login:-
-            localStorage.setItem("user",JSON.stringify(res.data));
-
-            window.location = "/";
-        })
-        .catch(err => {
-            console.error(err);
-            alert("Invalid username or password");
-            // alert(this.username.state,this.password.state)
-        });
+    // Redirect based on role
+    if (res.data.role === "admin") {
+        window.location = "/Admin";
+    } else {
+        window.location = "/";
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Invalid username or password");
+  });
     }
 
 

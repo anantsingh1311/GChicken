@@ -57,6 +57,10 @@ const userSchema = new Schema({
         select: false
 
 
+    },
+    role:{
+        type:String,
+        default:"customer"
     }
 }, {
     timestamps:true
