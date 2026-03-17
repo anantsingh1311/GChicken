@@ -32,7 +32,7 @@ export default class Navbar extends Component{
            <li className="navbar-item">
           <Link to="/Order" className="nav-link royal-nav-link"><b>Order Now</b></Link>
           </li>
-            {user.role === "admin" && (
+            {user && user.role === "admin" && (
          <li className="navbar-item">
           <Link to="/Admin" className="nav-link royal-nav-link"><b>Admin</b></Link>
             </li>

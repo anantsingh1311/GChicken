@@ -39,7 +39,9 @@ export default class Login extends Component{
        axios.post("http://localhost:5000/api/login", logInUser)
   .then(res => {
     alert("Login successful");
+    // the issue is somewhere here because when we send the username, it gets stored but the role is not for some reason
     localStorage.setItem("user", JSON.stringify(res.data));
+    console.log(res.data.username)
 
     // Redirect based on role
     if (res.data.role === "admin") {
