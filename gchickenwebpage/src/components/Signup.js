@@ -50,107 +50,104 @@ export default class Signup extends Component{
     }
 
     OnUsernameChanged(e){
-        this.setState={
+        this.setState({
 
             username:e.target.value
        
-        };
+        });
     }
     OnFirstNameChanged(e){
-        this.setState={
+        this.setState({
             
             firstname:e.target.value
        
-        };
+        });
     }
     OnMobileChanged(e){
-        this.setState={
+        this.setState({
             mobile:e.target.value
-        }
+        })
     }
     OnLastNameChanged(e){
-        this.setState={
+        this.setState({
             
             lastname:e.target.value
         
-        }
+        })
     }
     OnFirmChanged(e){
-        this.setState={
+        this.setState({
            
             firmname:e.target.value
         
-        }
+        })
     }
     OnEmailChanged(e){
-        this.setState={
+        this.setState({
            
             email:e.target.value
         
-        }
+        })
     }
     OnPasswordChanged(e){
-        this.setState={
+        this.setState({
             
             password:e.target.value
         
-        }
+        })
     }
     OnPasswordCheckChanged(e){
-        this.setState={
+        this.setState({
             
             passwordCheck:e.target.value
         
-        }
+        })
     }
 
 
 
 
 
-    OnSubmit(e){
+OnSubmit(e){
+    e.preventDefault();
 
-        e.preventDfeault();
-         if (this.state.password !== this.state.passwordCheck) {
+    if (this.state.password !== this.state.passwordCheck) {
         alert("The passwords don't match, please re-enter your password");
         return;
-         }
-
-         console.log("SUBMIT TRIGGERED");
-
-         const user = {
-            username: this.state.username,
-
-            firstname:this.state.firstname,
-        
-            lastname:this.state.lastname,
-        
-            firmname:this.state.firmname,
-        
-            mobile:this.state.mobile,
-        
-            email:this.state.email,
-        
-            password: this.state.password
-        };
-
-        axios.post('http://localhost:5000/user/add', user)
-        .then(res => console.log(res.data))
-        .catch(err => {
-          if (err.response) {
-             console.log("BACKEND ERROR:", err.response.data);
-            } 
-        else {
-              console.log(err);
-            }
-        });
-
-        this.setState({
-            username: '',
-            password: '',
-            checkPassword: ''
-        });
     }
+
+    console.log("SUBMIT TRIGGERED");
+
+    const user = {
+        username: this.state.username,
+        firstname: this.state.firstname,
+        lastname: this.state.lastname,
+        firmname: this.state.firmname,
+        mobile: this.state.mobile,
+        email: this.state.email,
+        password: this.state.password
+    };
+
+    axios.post('http://localhost:5000/user/add', user)
+    .then(res => {
+        console.log(res.data);
+        alert("Credentials Created!");
+        window.location.href = "/login";
+    })
+    .catch(err => {
+        if (err.response) {
+            console.log("BACKEND ERROR:", err.response.data);
+        } else {
+            console.log(err);
+        }
+    });
+
+    this.setState({
+        username: '',
+        password: '',
+        passwordCheck: ''
+    });
+}
 
    render(){
     return(
@@ -202,7 +199,7 @@ export default class Signup extends Component{
 <br/>
 <div className="form-group">
 <label>Re-Enter your Password:</label>
-<input type="password" required value={this.state.checkPassword} onChange={this.OnPasswordCheckChanged}/>
+<input type="password" required value={this.state.passwordCheck} onChange={this.OnPasswordCheckChanged}/>
 </div>
 
 <div className="submit-group">

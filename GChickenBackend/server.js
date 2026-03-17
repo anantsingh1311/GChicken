@@ -28,9 +28,12 @@ connection.once('open', () => { console.log("MongoDB database connection establi
 //using our created routes:
 const userRouter = require('./routes/user-route');
 const itemsRouter = require('./routes/items-route');
+const authuserRoutes = require('./routes/authorization');
 
 app.use('/user',userRouter);
 app.use('/items',itemsRouter);
+app.use('/api',authuserRoutes);
+app.use('/api',authuserRoutes);
 
 //this app starts the server on listening on the port specified above
 app.listen(port, () => {
