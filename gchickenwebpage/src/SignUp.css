@@ -84,6 +84,6 @@
 /* Hover effect */
 .submit-button:hover{
     color: #ffa600;
-    background-color: rgba(255, 166, 0, 0.414);
+    background-color: rgba(200, 126, 48, 0.859);
     transition: 0.3s;
 }

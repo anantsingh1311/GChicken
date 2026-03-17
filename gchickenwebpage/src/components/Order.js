@@ -84,11 +84,11 @@ export default class Order extends Component{
                 <label>Postcode:</label>
                 <input type="text" required/>
                 </div>
-                <div className="submit-group">
-               <input type="submit" value="Confirm Order" className="submit-order"/>
-               </div>
                 </div>
             </form>
+              <div className="submit-group">
+               <input type="submit" value="Confirm Order" className="btn-btn primary submit-order"/>
+               </div>
         </div>)
     ;
     }

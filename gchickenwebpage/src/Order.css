@@ -47,15 +47,14 @@
 }
 
 .submit-order{
-  font-family: 'Times New Roman', Times, serif;
-  color: goldenrod;
-  background-color: #0f4f3a;
-  border: 2px solid rgb(129, 113, 25);
-  padding: 0.5rem 1rem;
-  border-radius: 15px;
-  font-size: 1rem;
-  cursor: pointer;
-  max-width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    color: goldenrod;
+    background-color: #0f4f3a;
+    border: 2px solid gold;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    outline: none;
 }
 
 .submit-group{
@@ -65,7 +64,7 @@
 
 .submit-order:hover{
   color: #ffa600;
-  background-color: rgba(255, 166, 0, 0.414);
+  background-color: rgba(200, 126, 48, 0.859);
   transition: 0.3s;
 }
 
