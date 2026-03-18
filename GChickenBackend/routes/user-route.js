@@ -20,6 +20,7 @@ router.route('/add').post((req, res) => {
     const email = req.body.email;
     const mobile = req.body.mobile;
     const password = req.body.password;
+    const role =  req.body.role;
 
        const newuser = new User({ 
             username,
@@ -28,7 +29,8 @@ router.route('/add').post((req, res) => {
             firmname,
             email,
             mobile, 
-            password
+            password,
+            role
         });
 
     newuser.save()

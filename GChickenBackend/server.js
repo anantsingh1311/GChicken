@@ -35,6 +35,9 @@ app.use('/items',itemsRouter);
 app.use('/api',authuserRoutes);
 app.use('/api',authuserRoutes);
 
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 //this app starts the server on listening on the port specified above
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);

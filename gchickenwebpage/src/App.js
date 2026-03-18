@@ -19,15 +19,16 @@ function AdminRoute({ children }) {
   }
 
   if (user.role?.toLowerCase() !== "admin") {
-    return <Navigate to="/Login" replace />;
+    return <Navigate to="/" replace />;
   }
 
   return <>{children}</>;
 }
 
+
 function App() {
   return (
-    <div>
+    <div className="app-root">
     
         <Router>
           <Navbar/>

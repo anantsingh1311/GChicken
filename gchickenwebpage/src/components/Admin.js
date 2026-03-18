@@ -61,6 +61,7 @@ onButtonPressed = (id) => {
                 <th>Firm Name</th>
                 <th>Email Id</th>
                 <th>Mobile</th>
+                <th>Role</th>
                 <th>Action</th>
                 </tr>
                 </thead>
@@ -75,6 +76,7 @@ onButtonPressed = (id) => {
                             <td>{user.firmname}</td>
                             <td>{user.email}</td>
                             <td>{user.mobile}</td>
+                            <td>{user.role}</td>
                             <td><button
                 className="DeleteButton"
                 onClick={() => this.onButtonPressed(user._id)}

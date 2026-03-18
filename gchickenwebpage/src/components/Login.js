@@ -37,19 +37,24 @@ export default class Login extends Component{
         };
 
        axios.post("http://localhost:5000/api/login", logInUser)
-  .then(res => {
-    alert("Login successful");
-    // the issue is somewhere here because when we send the username, it gets stored but the role is not for some reason
-    localStorage.setItem("user", JSON.stringify(res.data));
-    console.log(res.data.username)
+    .then(res => {
+  const { token, user } = res.data;
 
-    // Redirect based on role
-    if (res.data.role === "admin") {
-        window.location = "/Admin";
-    } else {
-        window.location = "/";
-    }
-  })
+  // ✅ store token separately
+  localStorage.setItem("token", token);
+
+  // ✅ store user object
+  localStorage.setItem("user", JSON.stringify(user));
+
+  console.log(user.role); // ✅ correct
+
+  // Redirect based on role
+  if (user.role === "admin") {
+    window.location = "/admin";
+  } else {
+    window.location = "/";
+  }
+})
   .catch(err => {
     console.error(err);
     alert("Invalid username or password");
