@@ -1,7 +1,5 @@
 import React, { Component } from "react"; 
 // Import React and Component class to create a class-based React component
-
-import "../App.css"; 
 import "../Products.css"; 
 // Import CSS files for styling the app and products table
 
@@ -170,7 +168,7 @@ export default class Products extends Component {
     const { lightboxOpen, lightboxImages, imageIndex } = this.state;
 
     return (
-      <div className="app-root">
+      <div className="content">
 
         {/* Page Title */}
         <h1 className="textTypeCursive">
@@ -255,6 +253,7 @@ export default class Products extends Component {
         )}
 
       </div>
+      
     );
   }
 }

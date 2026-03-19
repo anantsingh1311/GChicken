@@ -70,7 +70,7 @@ export default class Login extends Component{
 
     render(){
         return(
-            <div className="app-root">
+            <div>
             <h1 id="titleLogin">Log-in Page</h1>
             <form className="form-login" onSubmit={this.OnSubmit}>
                 <div className='form-group-login'>

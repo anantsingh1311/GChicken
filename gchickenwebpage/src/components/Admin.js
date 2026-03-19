@@ -46,7 +46,7 @@ onButtonPressed = (id) => {
         const {users} = this.state;
         return(
             
-        <div className="app-root">
+        <div>
             <div className="table-wrapper">
             <div className="content">
             <h1>Admin Page</h1>
