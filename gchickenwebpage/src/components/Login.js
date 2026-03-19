@@ -3,6 +3,8 @@ import "../Login.css"
 import "@fontsource/great-vibes"; 
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default class Login extends Component{
      constructor(props){
@@ -37,31 +39,37 @@ export default class Login extends Component{
         };
 
        axios.post("http://localhost:5000/api/login", logInUser)
-    .then(res => {
+.then(res => {
+
   const { token, user } = res.data;
 
-  // ✅ store token separately
+  // store token
   localStorage.setItem("token", token);
 
-  // ✅ store user object
+  // store user
   localStorage.setItem("user", JSON.stringify(user));
 
-  console.log(user.role); // ✅ correct
+  console.log(user.role);
 
-  // Redirect based on role
-  if (user.role === "admin") {
-    window.location = "/admin";
-  } else {
-    window.location = "/";
-  }
-})
-  .catch(err => {
-    console.error(err);
-    alert("Invalid username or password");
-  });
+  toast.success("Login successful! Welcome " + user.username);
+
+  // redirect after short delay so user sees message
+  setTimeout(() => {
+    if (user.role === "admin") {
+      window.location = "/admin";
+    } else {
+      window.location = "/";
     }
+  }, 1500);
 
+})
+.catch(err => {
+  console.error(err);
 
+  toast.error("Invalid username or password");
+});
+
+    }
 
 
 
@@ -72,6 +80,7 @@ export default class Login extends Component{
         return(
             <div>
             <h1 id="titleLogin">Log-in Page</h1>
+            <ToastContainer position="top-center" autoClose={2000} />
             <form className="form-login" onSubmit={this.OnSubmit}>
                 <div className='form-group-login'>
                     <h3><b>Please Enter your username below:</b></h3>
@@ -87,7 +96,7 @@ export default class Login extends Component{
             </form>
             </div>
         );
-    }
+    };
 }
 
 

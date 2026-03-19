@@ -29,13 +29,11 @@ router.post('/login', async (req, res) => {
     const isMatch = await user.matchPassword(password);
     if (!isMatch) return res.status(401).json({ message: "Invalid credentials" });
 
-    // ✅ Create token
-    const token = jwt.sign(
-        { id: user._id, role: user.role },
-        "your_secret_key", // ⚠️ use env variable in real apps
-        { expiresIn: "1h" }
-    );
-
+  const token = jwt.sign(
+    { id: user._id, role: user.role },
+    process.env.JWT_SECRET,
+    { expiresIn: process.env.JWT_EXPIRE }
+);
     res.json({
         message: "Login successful",
         token,
