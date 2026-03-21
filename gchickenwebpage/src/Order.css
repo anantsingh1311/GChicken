@@ -1,80 +1,176 @@
-/* Submit button */
-
-/*Heading*/
-#OrderNowHeading{
-    font-family: 'Times New Roman', Times, serif;
-    color: goldenrod;
-    font-weight: 500;
-    text-align: center;
+/* ROOT */
+body {
+  background-color: #f8f9fb;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.formOrder{
-    font-family: 'Times New Roman', Times, serif;
-    color: goldenrod;
-    font-weight: 500;
-    
-    max-width: 500px;
-    margin: auto;
-    
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+/* PAGE CONTAINER */
+.container {
+  max-width: 1200px;
 }
 
-/* Each form section */
-.form-group{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+/* HEADER */
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  color: goldenrod;
 }
 
-/* Labels */
-.form-group label{
-    font-family: 'Times New Roman', Times, serif;
-    color: goldenrod;
-    font-size: large;
-    font-weight: 400;
-    gap: 2px;
-    text-spacing-trim: normal;
+/* PRODUCT CARD */
+.card {
+  border: none;
+  border-radius: 16px;
+  transition: all 0.25s ease;
+  background: #ffffff;
 }
 
-/* Inputs */
-.form-group input{
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    width: 100%;
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-.submit-order{
-    font-family: 'Times New Roman', Times, serif;
-    color: goldenrod;
-    background-color: #0f4f3a;
-    border: 2px solid gold;
-    padding: 10px 25px;
-    border-radius: 25px;
-    cursor: pointer;
-    outline: none;
+/* PRODUCT IMAGE */
+.card-img-top {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 
-.submit-group{
-  text-align: center;
-  margin-top: 1.2rem;
+/* CARD BODY */
+.card-body {
+  padding: 1.25rem;
 }
 
-.submit-order:hover{
-  color: #ffa600;
-  background-color: rgba(200, 126, 48, 0.859);
-  transition: 0.3s;
+/* PRODUCT TITLE */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1f2d3d;
 }
 
-/* Mobile */
-@media (max-width: 600px){
-  .submit-order{
-    font-size: 0.9rem;
-    padding: 0.45rem 0.9rem;
+/* DESCRIPTION */
+.card-text {
+  font-size: 0.9rem;
+  color: #6c757d;
+  min-height: 40px;
+}
+
+/* PRICE */
+.card .fw-bold {
+  color: #27ae60;
+  font-size: 1rem;
+}
+
+/* INPUT FIELD */
+input.form-control {
+  border-radius: 10px;
+  border: 1px solid #e0e6ed;
+  transition: all 0.2s ease;
+}
+
+input.form-control:focus {
+  border-color: #4cafef;
+  box-shadow: 0 0 0 2px rgba(76, 175, 239, 0.15);
+}
+
+/* FORM SECTION */
+form {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* FORM LABELS */
+label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #34495e;
+}
+
+/* SELECT */
+select.form-control {
+  border-radius: 10px;
+  border: 1px solid #e0e6ed;
+}
+
+/* BUTTON */
+button.btn-success {
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #28a745, #2ecc71);
+  border: none;
+  transition: all 0.25s ease;
+}
+
+button.btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(46, 204, 113, 0.3);
+}
+
+/* GRID SPACING */
+.row {
+  margin-top: 10px;
+}
+
+/* SECTION TITLE */
+h4 {
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .card-img-top {
+    height: 180px !important;
+  }
+
+  form {
+    padding: 15px;
   }
 }
+/* IMAGE CAROUSEL */
+.image-carousel {
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
 
+/* IMAGE */
+.image-carousel img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: all 2s ease ou;
+}
 
+/* BUTTONS */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
 
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* POSITIONING */
+.carousel-btn.left {
+  left: 10px;
+}
+
+.carousel-btn.right {
+  right: 10px;
+}

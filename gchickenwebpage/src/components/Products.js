@@ -188,13 +188,13 @@ export default class Products extends Component {
           </div>
 
 
-          {/* Retail table */}
+          {/* Retail table
           <div className="textTypeCursive">
             <h2>
               <b>Retail Price Sheet</b>
             </h2>
             {this.renderTable()}
-          </div>
+          </div> */}
 
         </div>
 
